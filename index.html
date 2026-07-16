@@ -29,7 +29,7 @@
             gap: 25px; /* 칸 사이의 간격 */
             margin-top: 20px;
         }
-        /* 각 프로그램 카드 스타일 */
+        /* 각 프로그램 카드 스타일 (공백 밀착을 위해 flex-start로 설정) */
         .grid-item {
             background: white;
             border: 1px solid #ddd;
@@ -38,10 +38,12 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start; /* ◀ 위로 딱 붙도록 설정 */
         }
+        /* 공백 조절을 위해 제목 마진 축소 */
         .grid-item h3 {
             margin-top: 0;
+            margin-bottom: 8px; /* ◀ 아래쪽 여백 확 줄임 */
             font-size: 1.05rem;
             line-height: 1.4;
         }
@@ -52,13 +54,13 @@
         .grid-item h3 a:hover {
             text-decoration: underline;
         }
-        /* 이미지 크기 자동 맞춤 (기존 500px 제한 대신 가로폭 가득 채우기) */
+        /* 이미지 크기 자동 맞춤 및 마진 조절 */
         .grid-item img {
             width: 100%;
             height: auto;
             border-radius: 4px;
             border: 1px solid #eee;
-            margin-top: 10px;
+            margin-top: 5px; /* ◀ 이미지 위쪽 여백 바짝 밀착 */
         }
         /* 아직 채워지지 않은 빈 카드의 스타일 */
         .grid-item.empty {
@@ -92,9 +94,11 @@
             <img src="https://oygooy.github.io/picsay/img_사진속성편집기.png" alt="이미지 속성 메모기">
         </div>
 
-        <!-- 1행 3열: 빈칸 (나중에 채울 프로젝트) -->
-        <div class="grid-item empty">
-            <p>준비 중인 프로그램입니다 🛠️</p>
+        <!-- 1행 3열: 랜덤문자열 자동입력기 (Autofill) 섹션 -->
+        <div class="grid-item">
+            <h3>3. <a href="https://github.com/oygooy/Autofill/releases">랜덤문자열 자동입력기.exe 다운로드 바로가기</a></h3>
+            <!-- 제공해주신 screenshot.png 원본 주소를 연동했습니다 -->
+            <img src="https://raw.githubusercontent.com/oygooy/Autofill/main/screenshot.png" alt="랜덤문자열 자동입력기">
         </div>
 
         <!-- 2행 1열: 빈칸 -->
